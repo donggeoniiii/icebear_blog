@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    # JPA Settings: ?? ?? ??
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+    # ???? ???? ? ??? ??? ??
+    defer-datasource-initialization: true
+
+  # ??? db ??
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+  # H2 ???
+  h2:
+    console:
+      enabled: true
