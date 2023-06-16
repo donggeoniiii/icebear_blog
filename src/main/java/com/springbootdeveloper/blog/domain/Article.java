@@ -2,6 +2,10 @@ package com.springbootdeveloper.blog.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
 
 @Entity // 엔티티로 설정
 @Getter // 게터 생성
@@ -19,6 +23,14 @@ public class Article {
 
     @Column(name = "content", nullable = false)
     private String content;
+
+    @CreatedDate // 생성시간 저장 (자동으로 들어가므로 nullable 여부 안골라도 됨)
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate // 마지막 수정시간 저장 (마찬가지로 nullable 여부 안골라도 됨)
+    @Column(name= "updated_at")
+    private LocalDateTime updatedAt;
 
     @Builder // 빌더 패턴으로 게시글 객체 생성
     /*

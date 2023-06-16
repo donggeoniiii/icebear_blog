@@ -1,19 +1,18 @@
 spring:
   jpa:
-    # JPA Settings: ?? ?? ??
+    # JPA Settings
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-
-    # ???? ???? ? ??? ??? ??
+        
     defer-datasource-initialization: true
 
-  # ??? db ??
+  # 테스트 db 이름 설정
   datasource:
     url: jdbc:h2:mem:testdb
 
-  # H2 ???
+  # H2 활성화
   h2:
     console:
       enabled: true

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf test</title>
+</head>
+<body>
+    <div class="title">
+        <h1>타임리프 익히기</h1>
+    </div>
+    <div class="container">
+        <!--    LocalDate 포맷 설정    -->
+        <p th:text="${#temporals.format(today, 'yyyy-MM-dd')}"></p>
+
+        <div th:object="${person}">
+            <p th:utext="|이름: *{name}|"> </p>
+            <p th:utext="|나이: *{age}|"> </p>
+            <p>취미</p>
+            <ul th:each="hobby: *{hobbies}">
+                <li th:text="${hobby}"></li>
+                <!-- 만약 hobby가 '운동'이면 얘도 출력 -->
+                <span th:if="${hobby == '롤토체스'}">(대표취미)</span>
+            </ul>
+        </div>
+    </div>
+    <div class="links">
+        <a th:href="@{api/article/{id}(id=${person.id})}">글 보기</a>
+    </div>
+</body>
+</html>
