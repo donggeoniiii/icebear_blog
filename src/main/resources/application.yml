@@ -11,8 +11,10 @@ spring:
   # 테스트 db 이름 설정
   datasource:
     url: jdbc:h2:mem:testdb
+    username: sa
 
   # H2 활성화
   h2:
     console:
       enabled: true
+

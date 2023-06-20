@@ -8,7 +8,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -34,14 +33,14 @@ public class WebSecurityConfig {
         return http
                 // 인증, 인가 설정
                 .authorizeRequests()
-                .requestMatchers("/login", "/signup", "/user").permitAll() // 해당 페이지는 모두 접근 가능
+                .requestMatchers("login", "/signup", "/user").permitAll() // 해당 페이지는 모두 접근 가능
                 .anyRequest().authenticated() // 그 외 페이지는 인가는 필요 없어도 인증은 필요할 수 있음
                 .and()
 
                 // 로그인 설정
                 .formLogin() // 이번엔 이메일 / pw 입력하는 form으로 하니까
                 .loginPage("/login") // 페이지는 '/login' 에서
-                .defaultSuccessUrl("/article") // 로그인하면 여기로
+                .defaultSuccessUrl("/blog/article") // 로그인하면 여기로
                 .and()
 
                 // 로그아웃 설정

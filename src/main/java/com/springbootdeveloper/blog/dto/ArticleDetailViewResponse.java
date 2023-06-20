@@ -20,5 +20,4 @@ public class ArticleDetailViewResponse {
         this.content = article.getContent();
         this.createdAt = article.getCreatedAt();
     }
-
 }
