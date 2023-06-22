@@ -1,6 +1,5 @@
 package com.springbootdeveloper.blog.controller;
 
-import com.springbootdeveloper.blog.domain.RefreshToken;
 import com.springbootdeveloper.blog.dto.CreateAccessTokenRequest;
 import com.springbootdeveloper.blog.dto.CreateAccessTokenResponse;
 import com.springbootdeveloper.blog.service.TokenService;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.time.Duration;
 
 @RequiredArgsConstructor
 @Controller

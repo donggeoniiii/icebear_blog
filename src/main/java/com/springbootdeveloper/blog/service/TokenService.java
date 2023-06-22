@@ -2,7 +2,6 @@ package com.springbootdeveloper.blog.service;
 
 import com.springbootdeveloper.blog.config.jwt.TokenProvider;
 import com.springbootdeveloper.blog.domain.User;
-import com.springbootdeveloper.blog.repository.RefreshTokenRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

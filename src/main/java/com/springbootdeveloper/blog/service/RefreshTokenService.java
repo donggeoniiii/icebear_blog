@@ -2,8 +2,6 @@ package com.springbootdeveloper.blog.service;
 
 import com.springbootdeveloper.blog.domain.RefreshToken;
 import com.springbootdeveloper.blog.repository.RefreshTokenRepository;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
