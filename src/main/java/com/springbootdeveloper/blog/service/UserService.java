@@ -27,5 +27,9 @@ public class UserService {
                 .build()).getId();
     }
 
-
+    // 사용자 id(==여기서는 이메일)로 검색
+    public User findById(Long userId){
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected User"));
+    }
 }

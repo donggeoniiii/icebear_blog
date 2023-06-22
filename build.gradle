@@ -14,13 +14,19 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
-    runtimeOnly 'com.h2database:h2'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // 타임리프
+    implementation 'org.springframework.boot:spring-boot-starter-security' // spring security
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6' // 타임리프
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' // OAuth2
+    implementation 'io.jsonwebtoken:jjwt:0.9.1' // jwt 라이브러리
+    implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359' // .xml 파일과 Java 객체 간 매핑 자동화
+    testImplementation 'org.projectlombok:lombok:1.18.26'
+    runtimeOnly 'com.h2database:h2' // 테스트용 db h2
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testAnnotationProcessor 'org.projectlombok:lombok' // 테스트코드에서 lombok이 안먹혀서 추가
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // jpa 라이브러리
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
 }

@@ -18,3 +18,18 @@ spring:
     console:
       enabled: true
 
+  #OAuth2
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 880585075893-ruft3dmlvnjhatmvc87cunuh2n6hqmrm.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
+jwt:
+  issuer: pkgun0727@gmail.com
+  secret_key: ssafy-9th-class8

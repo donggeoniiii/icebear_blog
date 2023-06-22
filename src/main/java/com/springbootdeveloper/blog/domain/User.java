@@ -26,10 +26,21 @@ public class User implements UserDetails {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
+    @Column(name = "nickname", unique = true)
+    private String nickname;
+
     @Builder
-    public User(String email, String password, String auth){
+    public User(String email, String password, String nickname){
         this.email = email;
         this.password = password;
+        this.nickname = nickname;
+    }
+
+    // 사용자 닉네임 변경 메소드
+    public User update(String nickname){
+        this.nickname = nickname;
+
+        return this;
     }
 
     // 권한 반환
